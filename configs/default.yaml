@@ -1,0 +1,23 @@
+fetch:
+  heasarc_tables:
+    - xrbcatalog
+    - hmxbcat2
+    - lmxbcatalog
+  maxrec: 20000
+
+features:
+  flux_cols: ["flux", "fx", "flux_max", "flux_min"]
+  hardness_cols: ["hardness", "hr1", "hr2"]
+  period_cols: ["p_orb", "period", "porb"]
+  bh_mass_cols: ["mbh", "bhmass", "mass_bh"]
+
+heuristics:
+  distance_col: "distance_kpc"
+  flux_unit: "erg cm-2 s-1"
+
+anomaly:
+  contamination: 0.05
+  random_state: 42
+
+logging:
+  config: "configs/logging.yaml"
