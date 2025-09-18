@@ -1,0 +1,19 @@
+version: 1
+formatters:
+  json:
+    (): hei_seti.logging_conf.JsonFormatter
+    fmt: "%(timestamp)s %(levelname)s %(name)s %(message)s"
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: json
+    level: INFO
+    stream: ext://sys.stdout
+loggers:
+  hei_seti:
+    level: INFO
+    handlers: [console]
+    propagate: False
+root:
+  level: INFO
+  handlers: [console]

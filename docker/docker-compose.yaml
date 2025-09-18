@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  hei-seti:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: hei-seti:latest
+    volumes:
+      - ../data:/app/data
+      - ../models:/app/models
+      - ../results:/app/results
+    environment:
+      - PYTHONUNBUFFERED=1
+    entrypoint: ["hei-seti"]
+    working_dir: /app
